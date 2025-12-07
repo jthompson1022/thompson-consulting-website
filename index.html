@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thompson Consulting Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Thompson Consulting Solutions – Fractional CTO and technology consulting services focused on improving efficiency and reducing risk for small to mid-market organizations.">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1020;
+      color: #f5f5f5;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .page {
+      max-width: 900px;
+      padding: 2.5rem 1.75rem;
+    }
+    .logo {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7dd3fc;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      margin: 0 0 0.75rem;
+    }
+    .tagline {
+      font-size: 1.05rem;
+      color: #cbd5f5;
+      margin-bottom: 1.75rem;
+      max-width: 32rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.12);
+      color: #e5e7eb;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+    .columns {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 2rem;
+    }
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      color: #e5e7eb;
+    }
+    .cta-box {
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 1.25rem 1.5rem;
+      background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.25), transparent 55%);
+    }
+    .cta-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      margin-bottom: 0.35rem;
+    }
+    .cta-email {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    .cta-email a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .cta-email a:hover {
+      text-decoration: underline;
+    }
+    .footnote {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+    @media (max-width: 768px) {
+      body {
+        align-items: flex-start;
+      }
+      .page {
+        padding-top: 3rem;
+      }
+      .columns {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="pill">
+      <span class="pill-dot"></span>
+      Fractional CTO & Technology Consulting
+    </div>
+    <div class="logo">Thompson Consulting Solutions</div>
+    <h1>Practical technology strategy for growing organizations.</h1>
+    <p class="tagline">
+      Thompson Consulting Solutions helps small and mid-market organizations modernize their technology, improve delivery efficiency, and reduce operational risk—without the overhead of a full-time executive team.
+    </p>
+
+    <div class="columns">
+      <section>
+        <div class="section-title">Focus Areas</div>
+        <ul>
+          <li>• Fractional CTO advisory and technology roadmapping</li>
+          <li>• Modern data & analytics platforms on Microsoft Azure</li>
+          <li>• Software delivery and DevOps optimization</li>
+          <li>• AI-assisted productivity and workflow automation</li>
+        </ul>
+      </section>
+
+      <aside class="cta-box">
+        <div class="cta-label">Get in Touch</div>
+        <div class="cta-email">
+          Email: <a href="mailto:info@thompsonconsultingsolutions.com">info@thompsonconsultingsolutions.com</a>
+        </div>
+        <p style="font-size: 0.82rem; margin-top: 0.75rem; margin-bottom: 0;">
+          Briefly describe your organization, your current technology challenges, and what a successful engagement would look like. We’ll follow up to schedule an introductory conversation.
+        </p>
+      </aside>
+    </div>
+
+    <div class="footnote">
+      © <span id="year"></span> Thompson Consulting Solutions. All rights reserved.
+    </div>
+  </main>
+
+  <script>
+    // Simple JS to keep the footer year current
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
