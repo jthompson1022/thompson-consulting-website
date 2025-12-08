@@ -294,3 +294,36 @@ footer {
     padding-inline: 1.25rem;
     }
 }
+.breadcrumb {
+  font-size: 0.8rem;
+  color: #7A838D;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.breadcrumb a {
+  color: #7A838D;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Slightly adjust hero styling on subpages if needed */
+.hero-subpage {
+  margin-top: 0.5rem;
+}
+.service-link a {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.service-link a:hover {
+  text-decoration: underline;
+}
