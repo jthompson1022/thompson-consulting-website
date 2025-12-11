@@ -89,6 +89,7 @@ a {
 }
 
 /* ===== NAVIGATION / DROPDOWN ===== */
+/* ===== NAVIGATION / DROPDOWN ===== */
 
 .main-nav {
   display: flex;
@@ -115,7 +116,6 @@ a {
 
 .nav-item {
   position: relative;
-  display: inline-block;
 }
 
 /* Dropdown */
@@ -133,9 +133,8 @@ a {
 
 .nav-dropdown-menu {
   position: absolute;
-  top: 100%;             /* place directly under the button */
+  top: 1.9rem;
   left: 0;
-  margin-top: 0.35rem;   /* small visual gap but still inside hover box */
   min-width: 190px;
   background: #FFFFFF;
   border: 1px solid rgba(148, 163, 184, 0.45);
@@ -145,7 +144,6 @@ a {
   display: none;
   z-index: 20;
 }
-
 
 .nav-dropdown-menu a {
   display: block;
@@ -157,18 +155,34 @@ a {
   white-space: nowrap;
 }
 
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu,
-.nav-dropdown-menu:hover {
-  display: block;
+.nav-dropdown-menu a:hover {
+  background: rgba(35, 48, 64, 0.06);
+  color: var(--color-primary);
 }
 
-
 /* Show dropdown on hover (desktop) */
-
 .nav-dropdown:hover .nav-dropdown-menu {
   display: block;
 }
+
+/* Mobile adjustments */
+@media (max-width: 720px) {
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .nav-dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    border-radius: 8px;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    margin-top: 0.4rem;
+  }
+}
+
 
 /* ===== HERO (HOME) ===== */
 
