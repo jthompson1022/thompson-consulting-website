@@ -116,7 +116,9 @@ a {
 
 .nav-item {
   position: relative;
+  display: inline-block;
 }
+
 
 /* Dropdown */
 
