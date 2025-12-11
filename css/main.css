@@ -115,9 +115,10 @@ a {
 
 .nav-item {
   position: relative;
+  display: inline-block;
 }
 
-/* Dropdown trigger */
+/* Dropdown */
 
 .nav-dropdown-toggle {
   display: inline-flex;
@@ -130,12 +131,11 @@ a {
   opacity: 0.75;
 }
 
-/* Dropdown menu */
-
 .nav-dropdown-menu {
   position: absolute;
-  top: 1.9rem;
+  top: 100%;             /* place directly under the button */
   left: 0;
+  margin-top: 0.35rem;   /* small visual gap but still inside hover box */
   min-width: 190px;
   background: #FFFFFF;
   border: 1px solid rgba(148, 163, 184, 0.45);
@@ -145,6 +145,7 @@ a {
   display: none;
   z-index: 20;
 }
+
 
 .nav-dropdown-menu a {
   display: block;
@@ -156,10 +157,12 @@ a {
   white-space: nowrap;
 }
 
-.nav-dropdown-menu a:hover {
-  background: rgba(35, 48, 64, 0.06);
-  color: var(--color-primary);
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown-menu:hover {
+  display: block;
 }
+
 
 /* Show dropdown on hover (desktop) */
 
