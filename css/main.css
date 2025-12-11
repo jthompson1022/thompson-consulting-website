@@ -161,10 +161,10 @@ a {
 }
 
 /* Show dropdown on hover (desktop) */
-.nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
   display: block;
 }
+
 
 
 /* Mobile adjustments */
