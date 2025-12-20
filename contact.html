@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Thompson Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Contact Thompson Consulting for Executive Recruiting or Technical Consulting.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="brand">
+        <div class="brand-mark">
+          <span class="brand-initial">T</span>
+        </div>
+        <div class="brand-text">
+          <div class="brand-name">Thompson Consulting</div>
+          <div class="brand-tagline">Executive Recruiting & Technical Advisory</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary" class="main-nav">
+        <div class="nav-item nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-toggle">
+            Services
+            <span class="nav-caret">▾</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="executive-recruiting.html">Executive Recruiting</a>
+            <a href="technical-consulting.html">Technical Consulting</a>
+          </div>
+        </div>
+
+        <a class="nav-link" href="index.html#about">Approach</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span>Contact</span>
+    </nav>
+
+    <section class="hero hero-subpage">
+      <div class="pill">
+        <span class="pill-dot"></span>
+        Start a conversation
+      </div>
+      <div class="eyebrow">Contact</div>
+      <h1 class="hero-title">Tell us what you’re working on.</h1>
+      <p class="hero-subtitle">
+        Select a service area below and we’ll keep the next step short—just enough context for a thoughtful follow-up.
+      </p>
+    </section>
+
+    <noscript>
+      <div class="section section-light">
+        <div class="section-intro">
+          JavaScript is required for the guided contact form. Please email us at <a href="mailto:info@thompsonconsultingsolutions.com">info@thompsonconsultingsolutions.com</a> to start the conversation, or enable JavaScript to use the interactive form.
+        </div>
+      </div>
+    </noscript>
+
+    <!-- Step 1: Service selection -->
+    <section class="section">
+      <div class="section-eyebrow">Step 1</div>
+      <h2 class="section-title-main">Choose the service you’re interested in.</h2>
+
+      <div class="selector-grid" role="group" aria-label="Service selection">
+        <button type="button" class="selector-card" id="selectRecruiting" aria-pressed="false" aria-controls="step2" aria-expanded="false">
+          <div class="selector-pill selector-pill--recruiting">Executive Recruiting</div>
+          <div class="selector-title">Critical leadership hires</div>
+          <div class="selector-body">
+            Executive and senior roles with a high bar for fit, judgment, and long-term impact.
+          </div>
+          <div class="selector-sub">
+            Focus: Healthcare · Non-profit · Technology
+          </div>
+        </button>
+
+        <button type="button" class="selector-card" id="selectConsulting" aria-pressed="false" aria-controls="step2" aria-expanded="false">
+          <div class="selector-pill selector-pill--tech">Technical Consulting</div>
+          <div class="selector-title">Pragmatic advisory</div>
+          <div class="selector-body">
+            Modernization, delivery improvement, data & AI readiness, and coaching/mentoring for leaders.
+          </div>
+          <div class="selector-sub">
+            Focus: Healthcare · Finance · Retail · Manufacturing
+          </div>
+        </button> 
+      </div>
+    </section>
+
+    <!-- Step 2: Dynamic form -->
+    <section class="section" id="step2" style="display:none;">
+      <div class="section-eyebrow">Step 2</div>
+      <h2 class="section-title-main" id="step2Title">A few details</h2>
+      <p class="section-intro" id="step2Intro" style="margin-top: 0.6rem;">
+        <!-- Filled dynamically -->
+      </p>
+
+      <div class="form-shell">
+        <form id="contactForm">
+          <!-- Hidden service field -->
+          <input type="hidden" name="serviceInterest" id="serviceInterest" value="">
+
+          <!-- Common fields -->
+          <div class="form-grid">
+            <div class="field">
+              <label for="orgName">Organization</label>
+              <input id="orgName" name="orgName" type="text" placeholder="Company / organization name" required>
+            </div>
+
+            <div class="field">
+              <label for="contactName">Your name</label>
+              <input id="contactName" name="contactName" type="text" placeholder="Full name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="name@company.com" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone (optional)</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(###) ###-####">
+            </div> 
+          </div>
+
+          <!-- Recruiting fields -->
+          <div id="recruitingFields" style="display:none;">
+            <div class="form-grid">
+              <div class="field">
+                <label for="recruitIndustry">Industry</label>
+                <select id="recruitIndustry" name="recruitIndustry">
+                  <option value="">Select one</option>
+                  <option>Healthcare</option>
+                  <option>Non-profit</option>
+                  <option>Technology</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="recruitSeniority">Seniority level</label>
+                <select id="recruitSeniority" name="recruitSeniority">
+                  <option value="">Select one</option>
+                  <option>Executive</option>
+                  <option>VP</option>
+                  <option>Director</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="recruitTimeline">Timeline</label>
+                <select id="recruitTimeline" name="recruitTimeline">
+                  <option value="">Select one</option>
+                  <option>Immediate</option>
+                  <option>3–6 months</option>
+                  <option>Exploring</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="recruitLocation">Location / remote preference</label>
+                <input id="recruitLocation" name="recruitLocation" type="text" placeholder="e.g., Detroit, hybrid / remote">
+              </div>
+
+              <div class="field field-full">
+                <label for="recruitRoles">Role(s) being considered</label>
+                <input id="recruitRoles" name="recruitRoles" type="text" placeholder="e.g., CTO, VP Engineering, Head of Data">
+              </div>
+
+              <div class="field field-full">
+                <label for="recruitBudget">Budget / compensation range</label>
+                <input id="recruitBudget" name="recruitBudget" type="text" placeholder="e.g., $180k–$240k base + bonus / equity">
+              </div>
+            </div>
+          </div>
+
+          <!-- Consulting fields -->
+          <div id="consultingFields" style="display:none;">
+            <div class="form-grid">
+              <div class="field">
+                <label for="consultIndustry">Industry</label>
+                <select id="consultIndustry" name="consultIndustry">
+                  <option value="">Select one</option>
+                  <option>Healthcare</option>
+                  <option>Finance</option>
+                  <option>Retail</option>
+                  <option>Manufacturing</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="consultFocus">Area of focus</label>
+                <select id="consultFocus" name="consultFocus">
+                  <option value="">Select one</option>
+                  <option>Modernization</option>
+                  <option>Delivery</option>
+                  <option>Data & AI</option>
+                  <option>Coaching & Mentoring</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="consultSupport">Type of support</label>
+                <select id="consultSupport" name="consultSupport">
+                  <option value="">Select one</option>
+                  <option>Advisory</option>
+                  <option>Fractional</option>
+                  <option>Coaching</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="consultHorizon">Engagement horizon</label>
+                <select id="consultHorizon" name="consultHorizon">
+                  <option value="">Select one</option>
+                  <option>Short-term</option>
+                  <option>Ongoing</option>
+                  <option>Exploring</option>
+                </select>
+              </div>
+
+              <div class="field field-full">
+                <label for="consultChallenge">Current challenge / objective</label>
+                <textarea id="consultChallenge" name="consultChallenge" rows="4" placeholder="A sentence or two is perfect."></textarea>
+              </div>
+
+              <div class="field">
+                <label for="consultSize">Team / organization size</label>
+                <input id="consultSize" name="consultSize" type="text" placeholder="e.g., 50 employees / 12-person engineering team">
+              </div>
+
+              <div class="field">
+                <label for="consultBudget">Budget / level of investment</label>
+                <input id="consultBudget" name="consultBudget" type="text" placeholder="e.g., $10k–$25k / month, exploring">
+              </div>
+            </div>
+          </div>
+
+          <!-- Short final note (common) -->
+          <div class="field" style="margin-top: 1rem;">
+            <label for="notes">Anything else we should know? (optional)</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Optional additional context"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send</button>
+            <a href="mailto:info@thompsonconsultingsolutions.com" class="btn btn-ghost">Email instead</a>
+          </div>
+
+          <!-- Inline confirmation -->
+          <div class="form-confirm" id="formConfirm" style="display:none;" role="status" aria-live="polite">
+            <div class="confirm-title">Thanks — message received.</div>
+            <div class="confirm-body">
+              We’ll respond by email with next steps. If you shared role or project details, we’ll follow up with a few focused questions (or propose a short intro call).
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Note: the contact form is currently frontend-only. Submitting the form shows an inline confirmation but does not send data. Integrate a backend or third-party form provider to collect submissions. -->
+
+    <footer>
+      <div>© <span id="year"></span> Thompson Consulting. All rights reserved.</div>
+      <div>Based in the United States, partnering with clients nationwide.</div>
+    </footer>
+  </div>
+
+  <script>
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+    const selectRecruiting = document.getElementById("selectRecruiting");
+    const selectConsulting = document.getElementById("selectConsulting");
+
+    const step2 = document.getElementById("step2");
+    const step2Title = document.getElementById("step2Title");
+    const step2Intro = document.getElementById("step2Intro");
+
+    const serviceInterest = document.getElementById("serviceInterest");
+    const recruitingFields = document.getElementById("recruitingFields");
+    const consultingFields = document.getElementById("consultingFields");
+
+    const contactForm = document.getElementById("contactForm");
+    const confirmPanel = document.getElementById("formConfirm");
+
+    function setSelected(button, otherButton) {
+      button.classList.add("is-selected");
+      button.setAttribute("aria-pressed", "true");
+      button.setAttribute("aria-expanded", "true");
+
+      otherButton.classList.remove("is-selected");
+      otherButton.setAttribute("aria-pressed", "false");
+      otherButton.setAttribute("aria-expanded", "false");
+    }
+
+    function showStep2(service) {
+      step2.style.display = "block";
+      confirmPanel.style.display = "none";
+
+      // Reset fields visibility
+      recruitingFields.style.display = "none";
+      consultingFields.style.display = "none";
+
+      if (service === "Executive Recruiting") {
+        serviceInterest.value = service;
+        step2Title.textContent = "Executive Recruiting — a few details";
+        step2Intro.textContent = "Share a bit about the role and timing. This helps us respond with a focused follow-up.";
+        recruitingFields.style.display = "block";
+      }
+
+      if (service === "Technical Consulting") {
+        serviceInterest.value = service;
+        step2Title.textContent = "Technical Consulting — a few details";
+        step2Intro.textContent = "Tell us what you’re navigating and what kind of support you’re considering. A short summary is perfect.";
+        consultingFields.style.display = "block";
+      }
+
+      // Smooth scroll into Step 2
+      step2.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    selectRecruiting.addEventListener("click", () => {
+      setSelected(selectRecruiting, selectConsulting);
+      showStep2("Executive Recruiting");
+    });
+
+    selectConsulting.addEventListener("click", () => {
+      setSelected(selectConsulting, selectRecruiting);
+      showStep2("Technical Consulting");
+    });
+
+    // Lightweight submit behavior (frontend only for now)
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // For now: show confirmation inline
+      confirmPanel.style.display = "block";
+
+      // Optional: clear form fields after submit
+      // contactForm.reset();
+
+      // Keep service selection highlighted; keep Step 2 visible
+      confirmPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    });
+  </script>
+</body>
+</html>
