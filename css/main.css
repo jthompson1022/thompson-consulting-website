@@ -399,11 +399,15 @@ a {
 
 .hero-badge {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   border-radius: 16px;
   padding: 0.7rem 0.8rem;
   background: #FFFFFF;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
   border: 1px solid rgba(148, 163, 184, 0.55);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .hero-badge--recruiting {
@@ -434,6 +438,43 @@ a {
 .badge-chip {
   font-size: 0.78rem;
   color: #E5E7EB;
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Interactive states for linked badges */
+a.hero-badge {
+  cursor: pointer;
+}
+
+.hero-badge:hover,
+.hero-badge:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.18);
+}
+
+/* Fallback for browsers without :focus-visible — keep subtle effect on focus */
+.hero-badge:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.18);
+}
+
+/* Visible focus ring for keyboard users */
+.hero-badge:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(76, 99, 125, 0.12), 0 16px 35px rgba(15, 23, 42, 0.18);
+  border-color: rgba(76, 99, 125, 0.45);
 }
 
 /* ===== GENERIC HERO ELEMENTS (SUBPAGES) ===== */
